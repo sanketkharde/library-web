@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+
+    {% block content %}
+       
+
+    <table class="table table-striped" >
+        <tr>
+            <th>id</th>
+            <th>Book Name</th>
+            <th>Edition</th>
+            <th>Author Name</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for i in books %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.book_name }}</td>
+            <td>{{ i.edition }}</td>
+            <td>{{ i.author_name }}</td>
+            <td>
+                <a href="edit/{{ i.id }}">Update</a>
+            </td>
+            <td>
+                <a href="delete/{{ i.id }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>

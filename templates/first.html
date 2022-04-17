@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/one.css' %}">
+</head>
+<body>
+    <div  style="background-color: blanchedalmond;">
+        
+        <strong style="color: rgb(61, 28, 227);">
+            <h1>Welcome to <span style="color: rgb(249, 26, 33);">LOGIN PAGE</span></h1>
+        </strong>      
+    </div>
+    <section class="vh-100">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6 text-black">
+      
+              
+              <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+      
+                <form style="width: 23rem;">
+                    {% csrf_token %}
+                   
+                    <!--{% if user.is_authenticated %}-->
+                   <li>hello {{user.first_name}}</li>
+                   <div class="pt-1 mb-4">
+                    <li class="nav-item active"><a class="nav-link" href="logout">logout</a></li>
+                    
+    
+                   </div>
+                   
+                   <!--{% else %}-->
+                   
+                   
+      
+                 
+      
+                  <div class="pt-1 mb-4">
+                    <li class="nav-item active"><a class="nav-link" href="login">Login</a></li>
+                  </div>
+      
+                  <p>Don't have an account? <a href="register" class="link-info">Register here</a></p>
+    
+                  <!--{% endif %}-->
+      
+                </form>
+      
+              </div>
+      
+            </div>
+            
+          </div>
+        </div>
+      </section>
+</body>
+</html>

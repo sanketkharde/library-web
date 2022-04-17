@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    
+   
+</head>
+<body style="background-color: aqua;">
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div>
+              <h1 style="color: firebrick;">Library Management System</h1>
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                class="img-fluid" alt="Sample image">
+            </div>
+            <div>
+                <form action="login" method="POST">
+                    {% csrf_token%}
+                    <input type="text" name="username" placeholder="username"><br>
+                    <input type="password" name="password" placeholder="enter password"><br>
+                    <input type="submit" value="Log In">
+                   
+            
+                </form>
+                <p>Don't have an account? <a href="register" class="link-info">Register here</a></p>
+                 
+                  <div>
+                    {% for i in messages %}
+                    <h3>{{i}}</h3>
+                    {% endfor %}
+                   </div>
+                  
+                
+            </div>
+           
+          </div>
+        </div>
+       
+         
+      </section>
+ 
+</body>
+</html>

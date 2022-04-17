@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+<body>
+{% block content %}
+<form method="POST" action="/app1/update/{{ books.id }}">
+    {% csrf_token %}
+<table>
+    <tr><td><input type="text" name="id" required maxlength="15" value="{{ books.id }}"/></td></tr>
+    <tr><td><input type="text" name="book_name" required maxlength="100" id="id" value="{{ books.book_name }}"/></td></tr>
+    <tr><td><input type="text" name="edition" required maxlength="254" id="id" value="{{ books.edition }}"/></td></tr>
+    <tr><td><input type="text" name="author_name" required maxlength="15" id="id" value="{{ books.author_name }}"/></td></tr>
+    <tr><td><button type="submit">Update</button></td></tr>
+</table>
+</form>
+{% endblock %}
+</body>
